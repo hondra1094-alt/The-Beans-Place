@@ -92,7 +92,7 @@ export default function NavBar() {
     //container = menuOpen, funciton to update the container = setMenuOpen, current value = false
     const [scrolled, setScrolled] = useState(false);
 
-    const closeMenu = () => setMenuOpen(false):
+    const closeMenu = () => setMenuOpen(false);
 
     useEffect( () => {
         const handleScroll = () => setScrolled(window.scrollY > 20);
@@ -103,7 +103,7 @@ export default function NavBar() {
 
     return(
         <motion.header>
-            
+
         </motion.header>
     );
 }
