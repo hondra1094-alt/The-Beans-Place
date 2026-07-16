@@ -32,7 +32,6 @@ import { Section } from "lucide-react";
 
 /* --- YOUR IMPORTS GO HERE --- */
 
-
 // STEP 2: Create and export the App component
 // Use: export default function App() { ... }
 //
@@ -57,49 +56,35 @@ import { Section } from "lucide-react";
 
 /* --- YOUR COMPONENT CODE GOES HERE --- */
 //import go below here
+import NavBar from "./components/NavBar";
 
 export default function App() {
-    return(
+    return (
         <div className="app">
             {/* NAVBAR */}
-
+            <NavBar />
             {/* HERO */}
             <section className="hero bg-hero">
-                <div className="hero-grid">
-
-                </div>    
-            </section>      
-            
-            {/* FEATURES / CAROUSEL */}
-            <section className="features bg-features" id="shop">
-
-            
+                <div className="hero-grid"></div>
             </section>
+
+            {/* FEATURES / CAROUSEL */}
+            <section className="features bg-features" id="shop"></section>
 
             {/* PRODUCT SHOWCASE */}
-            <section className="bg-cta">
-
-            </section>
+            <section className="bg-cta"></section>
 
             {/* CTA */}
-            <section className="bg-cta">
-
-            </section>
+            <section className="bg-cta"></section>
 
             {/* ABOUT */}
-            <section className="bg-cta" id="about">
-
-            </section>
+            <section className="bg-cta" id="about"></section>
 
             {/* CONTACT */}
-            <section className="bg-cta" id="contact">
-
-            </section>
+            <section className="bg-cta" id="contact"></section>
 
             {/* FOOTER */}
-            <section className="bg=footer">
-                
-            </section>
+            <section className="bg=footer"></section>
         </div>
     );
 }
