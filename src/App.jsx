@@ -13,8 +13,6 @@
 //
 // ============================================================
 
-import { Section } from "lucide-react";
-
 // STEP 1: Import your section components
 // Each component lives in its own file inside ./components/
 // Use this syntax:  import ComponentName from "./components/ComponentName";
@@ -31,6 +29,7 @@ import { Section } from "lucide-react";
 // - ContactSection
 
 /* --- YOUR IMPORTS GO HERE --- */
+
 
 // STEP 2: Create and export the App component
 // Use: export default function App() { ... }
@@ -55,36 +54,57 @@ import { Section } from "lucide-react";
 // for the navigation links in the NavBar.
 
 /* --- YOUR COMPONENT CODE GOES HERE --- */
-//import go below here
+// imports go below here
 import NavBar from "./components/NavBar";
+import HeroSection from "./components/HeroSection";
+import RibbonTicker from "./components/RibbonTicker";
 
 export default function App() {
-    return (
+    
+    return(
         <div className="app">
             {/* NAVBAR */}
             <NavBar />
+            
             {/* HERO */}
             <section className="hero bg-hero">
-                <div className="hero-grid"></div>
+                <div className="hero-grid">
+                    <HeroSection />
+                </div>
             </section>
-
+            
+            <RibbonTicker />
+            
             {/* FEATURES / CAROUSEL */}
-            <section className="features bg-features" id="shop"></section>
-
+            <section className="features bg-features" id="shop">
+                
+            </section>
+            
             {/* PRODUCT SHOWCASE */}
-            <section className="bg-cta"></section>
-
+            
+            <section className="bg-cta">
+                
+            </section>
+            
             {/* CTA */}
-            <section className="bg-cta"></section>
-
+            <section className="bg-cta">
+                
+            </section>
+            
             {/* ABOUT */}
-            <section className="bg-cta" id="about"></section>
-
+            <section className="bg-cta" id="about">
+                
+            </section>
+            
             {/* CONTACT */}
-            <section className="bg-cta" id="contact"></section>
-
+            <section className="bg-cta" id="contact">
+                
+            </section>
+            
             {/* FOOTER */}
-            <section className="bg=footer"></section>
+            <section className="bg-footer">
+                
+            </section>
         </div>
     );
 }
