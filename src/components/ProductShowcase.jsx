@@ -31,7 +31,18 @@
 //   imgPanamaGeisha, imgKona, imgGuatemalaAntigua
 
 /* --- YOUR IMPORTS GO HERE --- */
-
+import { motion } from "framer-motion";
+import ScrollReveal, { StaggerContainer, StaggerItem } from "./ui/ScrollReveal";
+import Badge from "./ui/Badge";
+import Button from "./ui/Button";
+import Separator from "./ui/Separator";
+import imgEthiopianHarrar from "..//assets/Ethiopian-Harrar-Bag.png";
+import imgColombianSupremo from "../assets/Colombian-Supremo-Bag.png";
+import imgKenyaAA from "../assets/Kenya-AA-Bag.png";
+import imgPanamaGeisha from "../assets/Panama-Geisha.png";
+import imgKona from "../assets/Kona-Bag.png";
+import imgGuatemalaAntigua from "../assets/Guatemala-Antigua-Bag.png";
+import { Scroll } from "lucide-react";
 
 // STEP 2: Define the products array (outside the component)
 // Each product is an object with these properties:
@@ -102,3 +113,140 @@
 //   </div>
 
 /* --- YOUR COMPONENT CODE GOES HERE --- */
+const Products = [
+    {
+      name: "Ethiopian Harrar" ,
+      origin: "Ethiopia",
+      price:"$18.99",
+      roast: "Medium",
+      notes: "Blueberry, dark chocolate, wiine",
+      image: imgEthiopianHarrar,
+      badge: "Best Seller", 
+    },
+    {
+      name: "Colombian Supremo",
+      origin:"Columbia",
+      price: "$16.99",
+      roast: "Medium-Dark",
+      notes: "Caramel, nutty, smooth finsih",
+      image: imgColombianSupremo,
+      badge:null, 
+    },
+    {
+      name: "Kenya AA" ,
+      origin:"kenya" ,
+      price:"$21.99" ,
+      roast:"light" ,
+      notes: "Bright citrus, balck currant, floral" ,
+      image:imgKenyaAA ,
+      badge: "Staff Pick" , 
+    },
+    {
+      name: "Panama Geisha" ,
+      origin: "Panama" ,
+      price: "$34.99" ,
+      roast: "light" ,
+      notes: "Jasmine, bergamot, tropical fruits" ,
+      image: imgPanamaGeisha ,
+      badge: "Limited" , 
+    },
+    {
+      name: "Kona" ,
+      origin: "Hawaii" ,
+      price: "$29.99" ,
+      roast: "Medium" ,
+      notes: "Brown sugar, macadamia, mild acidity" ,
+      image: imgKona ,
+      badge: null , 
+    },
+    {
+      name: "Guatemala Antigua" ,
+      origin: "Guatemala" ,
+      price: "$17.99" ,
+      roast: "Dark" ,
+      notes: "Cocoa, spice, smoky, sweetness" ,
+      image: imgGuatemalaAntigua ,
+      badge: "New" , 
+    },
+];
+
+export default function ProductShowcase() {
+    return(
+        <div className="product-showcase">
+            <ScrollReveal animation="fadeUp">
+                <Badge variant="accent" className="mb-4">
+                    Curated Selection
+                </Badge>
+            </ScrollReveal>
+            
+            <ScrollReveal animation="fadeUp" delay={0.1}>
+                <h2 className="product-showcase-title">
+                    Shop Our
+                </h2>
+                <span className="muted">Finest Beans</span>
+            </ScrollReveal>
+            
+            <ScrollReveal animation="fadeIn" delay={0.15}>
+                <Separator className="mx-auto mb-4 max-x-48" />
+            </ScrollReveal>
+            
+            <ScrollReveal animations="fadeUp" delay={0.15}>
+                <p className="product-showcase-subtitle">
+                    Hand-selected single-origin coffess, roasted to order. Each bag ships withing 48 hours of roasting for maximum freshness.
+                </p>
+            </ScrollReveal>
+            
+            <StaggerContainer staggerDelay={0.1} className="product-grid">
+                {Products.map((product) => (
+                    <StaggerItem key={product.name} animation="fadeUp">
+                        <motion.div
+                            className="product-card"
+                            whileHover={ { y: -8, transition: { duration: 0.25 }}}
+                        >
+                            <div className="product-card-image">
+                                <img
+                                    src={product.image}
+                                    alt={product.name}
+                                    loading="lazy"
+                                />
+                                {product.badge && (
+                                    <span className="product-badge">
+                                        {product.badge}
+                                    </span>
+                                )}
+                            </div>
+                            
+                            <div className="product-card-info">
+                                <div className="product-card-header">
+                                    <h3>{product.name}</h3>
+                                    <span className="product-price">{product.price}</span>
+                                </div>
+                                
+                            <p className="product-origin">
+                                {product.origin} · {product.roast} Roast
+                            </p>
+                            
+                            <p className="product-notes">
+                                {product.notes}
+                            </p>
+                            
+                            <Button variant="primary" size="sm" className="w-full mt-3">
+                                Add to Cart
+                            </Button>
+                            </div>
+                        </motion.div>
+                    </StaggerItem>   
+                ))}
+            </StaggerContainer>
+            
+            <ScrollReveal animation="fadeUp" delay={0.2}>
+                <div className="product-showcase-cta">
+                    <Button variant="accent" size="lg">
+                        View All Coffee
+                    </Button>
+                </div>
+                
+            </ScrollReveal>
+        </div>
+    )
+}

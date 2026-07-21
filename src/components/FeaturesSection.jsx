@@ -162,7 +162,7 @@ function ImageRow({ images, offset = 0 }) {
   const doubled = [...images, ...images];
 
   return (
-    <div className="carousel-row" style={{ transform: `translate3d (${offset}px, 0, 0)` }}>
+    <div className="carousel-row" style={{ transform: `translate3d(${offset}px, 0, 0)` }}>
       {doubled.map((src, index) => (
         <div className="carousel-card" key={`${index}`}>
           <img

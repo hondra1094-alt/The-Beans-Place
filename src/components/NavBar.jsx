@@ -149,7 +149,7 @@ export default function NavBar() {
                         <motion.div
                             className="overflow-hidden md: hidden"
                             initial={{ height: 0, opacity: 0}}
-                            animate={{ height: 0, opacitpy: 0 }}
+                            animate={{ height: 0, opacity: 0 }}
                             exit={{ height:0, opacity: 0 }}
                             transition={{ dureation: 0.3, ease: "easeInOut" }}
                             >
