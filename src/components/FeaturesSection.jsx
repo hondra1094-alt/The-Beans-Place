@@ -197,7 +197,7 @@ export default function FeaturesSection() {
             const range = Math.min(window.innerHeight * 0.5, 600 );
                 setOffsets( [
                     -p * range, //row 1 slides left
-                    p * range, // row 2 slides right
+                    p * range - range, // row 2 slides right
                     -p * range * 0.7 // row 3 slides left slower
                 ])
                 
